@@ -1,0 +1,26 @@
+{
+  "name": "guess-mine2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://nawgnod39@github.com/nawgnod39/guess-mine2.git",
+  "author": "takdongwan <dongwantak@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "eslint-plugin-prettier": "^3.3.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
+    "pug": "^3.0.0",
+    "socket.io": "^3.0.4"
+  },
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node src/server"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^7.0.0",
+    "prettier": "^2.2.1"
+  }
+}
