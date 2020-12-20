@@ -25,6 +25,14 @@ let sockets = [];
 
 io.on("connection", socket => {//이벤트에서 중요한것은 CONNECTION
   //sockets.push(socket.id);//소켓은 Request객체 , express 위에서 보내는 http 요청같은
-  socket.on("helloGuys", () => console.log("the client said hello"));
+  socket.on("newMessage", ({ message }) => {
+    socket.broadcast.emit("messageNotif", {
+      message,
+      nickname: socket.nickname || "Anon"//닉네임이 존재하지 않을 경우 anon
+    });
+  });
+  socket.on("setNickname", ({ nickname }) => {
+    socket.nickname = nickname;
+  });
 
 });
