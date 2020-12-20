@@ -25,5 +25,6 @@ let sockets = [];
 
 io.on("connection", socket => {//이벤트에서 중요한것은 CONNECTION
   //sockets.push(socket.id);//소켓은 Request객체 , express 위에서 보내는 http 요청같은
-  
+  socket.on("helloGuys", () => console.log("the client said hello"));
+
 });
