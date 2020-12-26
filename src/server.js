@@ -21,22 +21,10 @@ const handleListening = () =>
   console.log(`✅ Server running: http://localhost:${PORT}`);
 
 
-  
+
 const server = app.listen(PORT, handleListening);//서버변수를 만든 이유는 socketIO에 전달하기 위해서.
 
-const io = socketIO(server); 
+const io = socketIO(server);
 
-/*io.on("connection", socket => {//이벤트에서 중요한것은 CONNECTION
-  //sockets.push(socket.id);//소켓은 Request객체 , express 위에서 보내는 http 요청같은
-  socket.on("newMessage", ({ message }) => {
-    socket.broadcast.emit("messageNotif", {
-      message,
-      nickname: socket.nickname || "Anon"//닉네임이 존재하지 않을 경우 anon
-    });
-  });
-  socket.on("setNickname", ({ nickname }) => {
-    socket.nickname = nickname;
-  });
 
-});*/
-io.on("connection", socket => socketController(socket));
+io.on("connection", socket => socketController(socket, io));

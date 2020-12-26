@@ -12,7 +12,6 @@ const appendMsg = (text, nickname) => {
     `;
   messages.appendChild(li);
 };
-
 const handleSendMsg = event => {
   event.preventDefault();
   const input = sendMsg.querySelector("input");
@@ -22,10 +21,8 @@ const handleSendMsg = event => {
   appendMsg(value);
 };
 
-
 export const handleNewMessage = ({ message, nickname }) =>
   appendMsg(message, nickname);
-
 
 if (sendMsg) {
   sendMsg.addEventListener("submit", handleSendMsg);
