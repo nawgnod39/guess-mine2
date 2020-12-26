@@ -26,5 +26,4 @@ const server = app.listen(PORT, handleListening);//서버변수를 만든 이유
 
 const io = socketIO(server);
 
-
 io.on("connection", socket => socketController(socket, io));
