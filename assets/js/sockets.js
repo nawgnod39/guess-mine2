@@ -1,7 +1,6 @@
 import { handleNewUser, handleDisconnected } from "./notifications";
 import { handleNewMessage } from "./chat";
 import { handleBeganPath, handleStrokedPath, handleFilled } from "./paint";
-import { handlePlayerUpdate, handleGameStarted } from "./players";
 import {
   handlePlayerUpdate,
   handleGameStarted,
